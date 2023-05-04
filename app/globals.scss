@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+main {
+  @apply w-full h-screen flex items-center justify-center;
+}
+
+button {
+  --left: 50%;
+  --top: 50%;
+
+  @apply relative text-4xl font-bold bg-slate-500 px-6 py-3 rounded-2xl border-[3px] border-slate-700 isolate duration-200 overflow-hidden;
+
+  &:hover {
+    @apply bg-slate-400;
+  }
+
+  &::before {
+    content: '';
+    z-index: -1;
+    top: var(--top);
+    left: var(--left);
+    transform: translate(-50%, -50%);
+    transition: transform 250ms ease, opacity 150ms ease;
+    opacity: 0;
+    @apply absolute w-4 aspect-square bg-slate-500 rounded-full;
+  }
+
+  &:active::before {
+    transform: translate(-50%, -50%) scale(50);
+    opacity: 1;
+  }
+}
