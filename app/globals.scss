@@ -26,7 +26,7 @@ button {
     top: var(--top);
     left: var(--left);
     transform: translate(-50%, -50%);
-    transition: transform 250ms ease, opacity 150ms ease;
+    transition: transform 175ms ease, opacity 125ms ease;
     opacity: 0;
     @apply absolute w-4 aspect-square bg-slate-500 rounded-full;
   }
